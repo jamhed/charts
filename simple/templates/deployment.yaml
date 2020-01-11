@@ -37,7 +37,9 @@ spec:
         env:
         - name: BASE_URL
           value: {{ .Values.argovue.baseurl }}
-        {{ toYaml .Values.argovue.input | nindent 8 }}
+        {{- with .Values.argovue.input }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
       volumes:
       {{- if .Values.privateVolumeSize }}
       - name: private

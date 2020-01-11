@@ -1,0 +1,8 @@
+image: image
+port: port
+privateVolumeSize: volume
+argovue:
+  baseurl: baseUrl
+  labels:
+    label: value
+  input: []
