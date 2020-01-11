@@ -3,7 +3,7 @@ entries:
   argovue:
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T14:40:55.922282+01:00"
+    created: "2020-01-11T15:01:40.45671+01:00"
     description: ArgoVue Helm Chart
     digest: 408f45d5ad29f2acaedafb04e73f121add1490526b931619c8809b937ebf15a1
     name: argovue
@@ -13,7 +13,7 @@ entries:
     version: 0.4.14
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T14:40:55.919981+01:00"
+    created: "2020-01-11T15:01:40.455704+01:00"
     description: ArgoVue Helm Chart
     digest: 9456c016a1b57d6ae9f991572e8aad84a69ef7be1f2aa8a4f24a7278348e535c
     name: argovue
@@ -24,7 +24,17 @@ entries:
   filebrowser:
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T14:40:55.922644+01:00"
+    created: "2020-01-11T15:01:40.457831+01:00"
+    description: Filebrowser helm chart
+    digest: 83f1fd38fc4cd78bd7527125caf2b0f6f1d0daa39d1dfbd7bf383ca5e838f567
+    name: filebrowser
+    type: application
+    urls:
+    - https://jamhed.github.io/charts/filebrowser-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: v2.0.16
+    created: "2020-01-11T15:01:40.457469+01:00"
     description: Filebrowser helm chart
     digest: 8321d24f9835a8e50e38d2bfec3e5f9baf9d9fd016017872a2e03d0beb6cd228
     name: filebrowser
@@ -35,12 +45,12 @@ entries:
   simple:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T14:40:55.923008+01:00"
+    created: "2020-01-11T15:01:40.458167+01:00"
     description: Simple service
-    digest: 72d8d5160619591e5795e7ad36631d3883be74ffddbb7c49bf983e63531d7f51
+    digest: 5bfcfdd9575a7e4ae6a698c76c5e25ee2a94e9ade195ba89b0140e7f2e817963
     name: simple
     type: application
     urls:
     - https://jamhed.github.io/charts/simple-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-11T14:40:55.916826+01:00"
+generated: "2020-01-11T15:01:40.45294+01:00"
