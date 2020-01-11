@@ -1,0 +1,7 @@
+volumes:
+- name: name
+  claim: claim
+argovue:
+  baseurl: baseUrl
+  labels:
+    label: value

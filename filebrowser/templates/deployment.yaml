@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: {{ include "chart.fullname" . }}
   labels:
-    {{- toYaml .Values.argovue.labels | nindent 4 }}
+    {{- with .Values.argovue.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
     {{- include "chart.labels" . | nindent 4 }}
 spec:
   replicas: 1
@@ -13,7 +15,9 @@ spec:
   template:
     metadata:
       labels:
-        {{- toYaml .Values.argovue.labels | nindent 8 }}
+        {{- with .Values.argovue.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
         {{- include "chart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
