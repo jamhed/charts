@@ -4,4 +4,4 @@ privateVolumeSize: ~
 argovue:
   baseurl: ~
   labels: {}
-  env: []
+  input: []
