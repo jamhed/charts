@@ -8,4 +8,4 @@ spec:
     chart:
       repository: https://jamhed.github.io/charts
       name: filebrowser
-      version: 0.1.0
+      version: 0.1.4
