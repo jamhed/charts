@@ -7,7 +7,8 @@ CHARTMAJOR=$(echo $CHART | sed -E 's|(.*)\.[0-9]+$|\1|')
 NEWCHART="$CHARTMAJOR.$((CHARTMINOR+1))"
 yq w -i $NAME/Chart.yaml version $NEWCHART
 git commit $NAME/Chart.yaml -m "Bump chart:$NAME to $NEWCHART"
-make
+helm package $NAME -d docs
+helm repo index docs --url https://jamhed.github.io/charts
 git add docs
 git commit docs -m "Add release chart:$NAME:$NEWCHART"
 git push
