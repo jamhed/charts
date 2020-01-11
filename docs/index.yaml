@@ -3,34 +3,34 @@ entries:
   argovue:
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T14:18:34.22495+01:00"
+    created: "2020-01-11T14:34:15.722304+01:00"
     description: ArgoVue Helm Chart
     digest: 9456c016a1b57d6ae9f991572e8aad84a69ef7be1f2aa8a4f24a7278348e535c
     name: argovue
     type: application
     urls:
-    - https://githuben.intranet.mckinsey.com/pages/ppco/charts/argovue-0.4.12.tgz
+    - https://jamhed.github.io/charts/argovue-0.4.12.tgz
     version: 0.4.12
   filebrowser:
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T14:18:34.225386+01:00"
+    created: "2020-01-11T14:34:15.722653+01:00"
     description: Filebrowser helm chart
     digest: 8321d24f9835a8e50e38d2bfec3e5f9baf9d9fd016017872a2e03d0beb6cd228
     name: filebrowser
     type: application
     urls:
-    - https://githuben.intranet.mckinsey.com/pages/ppco/charts/filebrowser-0.1.0.tgz
+    - https://jamhed.github.io/charts/filebrowser-0.1.0.tgz
     version: 0.1.0
   simple:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T14:18:34.225649+01:00"
+    created: "2020-01-11T14:34:15.722923+01:00"
     description: Simple service
     digest: 72d8d5160619591e5795e7ad36631d3883be74ffddbb7c49bf983e63531d7f51
     name: simple
     type: application
     urls:
-    - https://githuben.intranet.mckinsey.com/pages/ppco/charts/simple-0.1.0.tgz
+    - https://jamhed.github.io/charts/simple-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-11T14:18:34.221789+01:00"
+generated: "2020-01-11T14:34:15.720889+01:00"
