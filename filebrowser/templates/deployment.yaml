@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "chart.fullname" . }}
+  labels:
+    {{- range .Values.argovue.labels }}
+    {{ .name }}: {{ .value }}
+    {{- end }}
+    {{- include "chart.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "chart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- range .Values.argovue.labels }}
+        {{ .name }}: {{ .value }}
+        {{- end }}
+        {{- include "chart.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: filebrowser/filebrowser:{{ .Chart.AppVersion }}
+        args: ["--noauth", "--root", "/mnt", "--baseurl", "{{ .Values.argovue.baseurl }}"]
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        volumeMounts:
+        {{- range $i, $volume := .Values.volumes }}
+        - mountPath: /mnt/{{ $volume.name }}
+          name: {{ $volume.name }}
+        {{- end }}
+      volumes:
+      {{- range $i, $volume := .Values.volumes }}
+      - name: {{ $volume.name }}
+        persistentVolumeClaim:
+          claimName: {{ $volume.claim }}
+      {{- end }}

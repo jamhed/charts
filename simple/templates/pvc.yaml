@@ -1,0 +1,24 @@
+{{- if .Values.privateVolumeSize }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "chart.fullname" . }}
+  labels:
+    {{- range .Values.argovue.labels }}
+    {{ .name }}: {{ .value }}
+    {{- end }}
+    {{- include "chart.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.accessMode | default "ReadWriteOnce" | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.privateVolumeSize | quote }}
+{{- if .Values.storageClass }}
+{{- if (eq "-" .Values.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end }}

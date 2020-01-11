@@ -1,0 +1,15 @@
+{{- if .Values.dex.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "argovue.fullname" . }}-dex
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: {{ include "argovue.fullname" . }}-dex
+    port: 5556
+    protocol: TCP
+    targetPort: 5556
+  selector:
+    app: {{ include "argovue.fullname" . }}-dex
+{{- end -}}

@@ -1,0 +1,39 @@
+{{- if .Values.dex.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ include "argovue.fullname" . }}-dex
+  name: {{ include "argovue.fullname" . }}-dex
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ include "argovue.fullname" . }}-dex
+    spec:
+      serviceAccountName: {{ include "argovue.fullname" . }}-dex
+      containers:
+      - image: quay.io/dexidp/dex:v2.10.0
+        name: {{ include "argovue.fullname" . }}-dex
+        command: ["/usr/local/bin/dex", "serve", "/etc/dex/cfg/config.yaml"]
+        ports:
+        - name: http
+          containerPort: 5556
+        volumeMounts:
+        - name: config
+          mountPath: /etc/dex/cfg
+{{- if .Values.mounts }}
+{{ toYaml .Values.mounts | indent 8 }}
+{{- end }}
+      volumes:
+{{- if .Values.volumes }}
+{{ toYaml .Values.volumes | indent 6 }}
+{{- end }}
+      - name: config
+        configMap:
+          name: {{ include "argovue.fullname" . }}-dex
+          items:
+          - key: config.yaml
+            path: config.yaml
+{{- end -}}

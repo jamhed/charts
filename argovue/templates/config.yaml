@@ -1,0 +1,10 @@
+apiVersion: argovue.io/v1
+kind: AppConfig
+metadata:
+  name: {{ include "argovue.fullname" . }}-config
+spec:
+  groups:
+  {{- range .Values.argovue.groups }}
+  - oidc: {{ .oidc }}
+    kubernetes: {{ .kubernetes }}
+  {{- end }}

@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "argovue.fullname" . }}
+  labels:
+    {{- include "argovue.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "argovue.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "argovue.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "argovue.serviceAccountName" . }}
+      volumes:
+{{- if .Values.volumes }}
+{{ toYaml .Values.volumes | indent 6 }}
+{{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+{{- if .Values.mounts }}
+{{ toYaml .Values.mounts | indent 10 }}
+{{- end }}
+          env:
+            - name: VERBOSE
+              value: {{ .Values.argovue.verbose }}
+            - name: SESSION_KEY
+              value: {{ randAlphaNum 16 }}
+            - name: OIDC_CLIENT_ID
+              value: {{ .Values.argovue.oidcClientId }}
+            - name: OIDC_CLIENT_SECRET
+              value: {{ .Values.argovue.oidcClientSecret }}
+            - name: OIDC_PROVIDER
+              value: {{ .Values.argovue.oidcProvider }}
+            - name: OIDC_REDIRECT_URL
+              value: {{ .Values.argovue.oidcRedirectUrl }}
+            - name: OIDC_SCOPE
+              value: {{ .Values.argovue.oidcScope }}
+            - name: UI_ROOT_URL
+              value: {{ .Values.argovue.uiRootUrl }}
+            - name: K8S_NAMESPACE
+              value: {{ .Release.Namespace }}
+            - name: K8S_RELEASE_NAME
+              value: {{ include "argovue.fullname" . }}
+            - name: DEX_SERVICE_NAME
+              value: {{ include "argovue.fullname" . }}-dex
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

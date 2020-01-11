@@ -1,0 +1,10 @@
+apiVersion: argovue.io/v1
+kind: Service
+metadata:
+  name: {{ include "argovue.fullname" . }}-filebrowser
+spec:
+  input: []
+  helmRelease:
+    chart:
+      git: https://github.com/jamhed/argovue.git
+      path: helm/filebrowser
