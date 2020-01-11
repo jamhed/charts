@@ -3,7 +3,7 @@ entries:
   argovue:
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T15:37:08.745324+01:00"
+    created: "2020-01-11T15:50:34.675731+01:00"
     description: ArgoVue Helm Chart
     digest: 408f45d5ad29f2acaedafb04e73f121add1490526b931619c8809b937ebf15a1
     name: argovue
@@ -13,7 +13,7 @@ entries:
     version: 0.4.14
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T15:37:08.744494+01:00"
+    created: "2020-01-11T15:50:34.674616+01:00"
     description: ArgoVue Helm Chart
     digest: 9456c016a1b57d6ae9f991572e8aad84a69ef7be1f2aa8a4f24a7278348e535c
     name: argovue
@@ -24,7 +24,17 @@ entries:
   filebrowser:
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T15:37:08.747767+01:00"
+    created: "2020-01-11T15:50:34.678477+01:00"
+    description: Filebrowser helm chart
+    digest: b927c1b1b5375f7368950f6db5c6eb3dd00c9e2015bfae74cdebe9ae7abd871d
+    name: filebrowser
+    type: application
+    urls:
+    - https://jamhed.github.io/charts/filebrowser-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: v2.0.16
+    created: "2020-01-11T15:50:34.678215+01:00"
     description: Filebrowser helm chart
     digest: 50a80c0259286444f68a047afc0276be90dbdb2ece007d46bf0a01fdd14df155
     name: filebrowser
@@ -34,7 +44,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T15:37:08.747095+01:00"
+    created: "2020-01-11T15:50:34.677619+01:00"
     description: Filebrowser helm chart
     digest: 22f45ab248fa71f9a2ed9cf2027ca18252cc43544acc38d49ed751b71c162630
     name: filebrowser
@@ -44,7 +54,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T15:37:08.746501+01:00"
+    created: "2020-01-11T15:50:34.676966+01:00"
     description: Filebrowser helm chart
     digest: 83f1fd38fc4cd78bd7527125caf2b0f6f1d0daa39d1dfbd7bf383ca5e838f567
     name: filebrowser
@@ -54,7 +64,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T15:37:08.745864+01:00"
+    created: "2020-01-11T15:50:34.676388+01:00"
     description: Filebrowser helm chart
     digest: 8321d24f9835a8e50e38d2bfec3e5f9baf9d9fd016017872a2e03d0beb6cd228
     name: filebrowser
@@ -65,7 +75,7 @@ entries:
   simple:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T15:37:08.750496+01:00"
+    created: "2020-01-11T15:50:34.682876+01:00"
     description: Simple service
     digest: 0e9809f63340ee99a3d03157ddc049129bd8bcf29d845551fa34283067a103df
     name: simple
@@ -75,7 +85,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T15:37:08.750215+01:00"
+    created: "2020-01-11T15:50:34.681955+01:00"
     description: Simple service
     digest: eff15189b6d9d8cd326cbf9c56cbb9613d2023209e6769a5fd0e90923ddcff50
     name: simple
@@ -85,7 +95,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T15:37:08.749648+01:00"
+    created: "2020-01-11T15:50:34.681065+01:00"
     description: Simple service
     digest: 31d6e72c980d1e4317ebe81ea462ea8fd2cad33d47a57636e3df4383eaa93a67
     name: simple
@@ -95,7 +105,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T15:37:08.749115+01:00"
+    created: "2020-01-11T15:50:34.680311+01:00"
     description: Simple service
     digest: cb8dc0f758c729a291ba46bf3fa3c35fd8057fe9cc875a74510a5299516aaf4b
     name: simple
@@ -105,7 +115,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T15:37:08.748483+01:00"
+    created: "2020-01-11T15:50:34.679079+01:00"
     description: Simple service
     digest: 5bfcfdd9575a7e4ae6a698c76c5e25ee2a94e9ade195ba89b0140e7f2e817963
     name: simple
@@ -113,4 +123,4 @@ entries:
     urls:
     - https://jamhed.github.io/charts/simple-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-11T15:37:08.741915+01:00"
+generated: "2020-01-11T15:50:34.672791+01:00"
