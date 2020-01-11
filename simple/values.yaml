@@ -3,9 +3,5 @@ port: ~
 privateVolumeSize: ~
 argovue:
   baseurl: ~
-  labels:
-  - name: name
-    value: value
-  env:
-  - name: name
-    value: value
+  labels: {}
+  env: []
