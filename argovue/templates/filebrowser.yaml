@@ -6,5 +6,6 @@ spec:
   input: []
   helmRelease:
     chart:
-      git: https://github.com/jamhed/argovue.git
-      path: helm/filebrowser
+      repository: https://jamhed.github.io/charts
+      name: filebrowser
+      version: 0.1.0
