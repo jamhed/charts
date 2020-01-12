@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   argovue:
   - apiVersion: v1
+    appVersion: 0.4.17
+    created: "2020-01-12T23:49:20.20031+01:00"
+    description: ArgoVue Helm Chart
+    digest: 477449d0ac65ebfabdf2757c730819a74f476f4c73e37a0aa8af69681289529f
+    name: argovue
+    type: application
+    urls:
+    - https://jamhed.github.io/charts/argovue-0.4.19.tgz
+    version: 0.4.19
+  - apiVersion: v1
     appVersion: 0.4.16
-    created: "2020-01-11T18:03:14.541273+01:00"
+    created: "2020-01-12T23:49:20.199603+01:00"
     description: ArgoVue Helm Chart
     digest: 7c141e9ccda93b32ecc66240b5e2ce332342760a867f1dcf4dfd808077f97fea
     name: argovue
@@ -13,7 +23,7 @@ entries:
     version: 0.4.18
   - apiVersion: v1
     appVersion: 0.4.15
-    created: "2020-01-11T18:03:14.540681+01:00"
+    created: "2020-01-12T23:49:20.198694+01:00"
     description: ArgoVue Helm Chart
     digest: b07dfd1a45fb76d8dc0340de326d6779635ba78ca254cf81e2e456b79def1390
     name: argovue
@@ -23,7 +33,7 @@ entries:
     version: 0.4.17
   - apiVersion: v1
     appVersion: 0.4.13
-    created: "2020-01-11T18:03:14.539855+01:00"
+    created: "2020-01-12T23:49:20.1978+01:00"
     description: ArgoVue Helm Chart
     digest: e1cd74e705cd701106e669ac77ee564dfc7c42b4638f7f0cbd38ff479e39c816
     name: argovue
@@ -33,7 +43,7 @@ entries:
     version: 0.4.16
   - apiVersion: v1
     appVersion: 0.4.13
-    created: "2020-01-11T18:03:14.539053+01:00"
+    created: "2020-01-12T23:49:20.196908+01:00"
     description: ArgoVue Helm Chart
     digest: 36c40e7e6b54057e34d2ff3ffa2d0b594e1364f602b0ca95bb4c3fd49c72adea
     name: argovue
@@ -43,7 +53,7 @@ entries:
     version: 0.4.15
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T18:03:14.538238+01:00"
+    created: "2020-01-12T23:49:20.195948+01:00"
     description: ArgoVue Helm Chart
     digest: 408f45d5ad29f2acaedafb04e73f121add1490526b931619c8809b937ebf15a1
     name: argovue
@@ -53,7 +63,7 @@ entries:
     version: 0.4.14
   - apiVersion: v1
     appVersion: 0.4.12
-    created: "2020-01-11T18:03:14.537419+01:00"
+    created: "2020-01-12T23:49:20.194403+01:00"
     description: ArgoVue Helm Chart
     digest: 9456c016a1b57d6ae9f991572e8aad84a69ef7be1f2aa8a4f24a7278348e535c
     name: argovue
@@ -64,7 +74,7 @@ entries:
   filebrowser:
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T18:03:14.544083+01:00"
+    created: "2020-01-12T23:49:20.205213+01:00"
     description: Filebrowser helm chart
     digest: b927c1b1b5375f7368950f6db5c6eb3dd00c9e2015bfae74cdebe9ae7abd871d
     name: filebrowser
@@ -74,7 +84,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T18:03:14.543495+01:00"
+    created: "2020-01-12T23:49:20.203953+01:00"
     description: Filebrowser helm chart
     digest: 50a80c0259286444f68a047afc0276be90dbdb2ece007d46bf0a01fdd14df155
     name: filebrowser
@@ -84,7 +94,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T18:03:14.542934+01:00"
+    created: "2020-01-12T23:49:20.20275+01:00"
     description: Filebrowser helm chart
     digest: 22f45ab248fa71f9a2ed9cf2027ca18252cc43544acc38d49ed751b71c162630
     name: filebrowser
@@ -94,7 +104,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T18:03:14.542379+01:00"
+    created: "2020-01-12T23:49:20.201761+01:00"
     description: Filebrowser helm chart
     digest: 83f1fd38fc4cd78bd7527125caf2b0f6f1d0daa39d1dfbd7bf383ca5e838f567
     name: filebrowser
@@ -104,7 +114,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: v2.0.16
-    created: "2020-01-11T18:03:14.541814+01:00"
+    created: "2020-01-12T23:49:20.201044+01:00"
     description: Filebrowser helm chart
     digest: 8321d24f9835a8e50e38d2bfec3e5f9baf9d9fd016017872a2e03d0beb6cd228
     name: filebrowser
@@ -115,7 +125,7 @@ entries:
   simple:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T18:03:14.547275+01:00"
+    created: "2020-01-12T23:49:20.210633+01:00"
     description: Simple service
     digest: 0e9809f63340ee99a3d03157ddc049129bd8bcf29d845551fa34283067a103df
     name: simple
@@ -125,7 +135,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T18:03:14.54637+01:00"
+    created: "2020-01-12T23:49:20.209335+01:00"
     description: Simple service
     digest: eff15189b6d9d8cd326cbf9c56cbb9613d2023209e6769a5fd0e90923ddcff50
     name: simple
@@ -135,7 +145,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T18:03:14.54579+01:00"
+    created: "2020-01-12T23:49:20.208501+01:00"
     description: Simple service
     digest: 31d6e72c980d1e4317ebe81ea462ea8fd2cad33d47a57636e3df4383eaa93a67
     name: simple
@@ -145,7 +155,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T18:03:14.545223+01:00"
+    created: "2020-01-12T23:49:20.207703+01:00"
     description: Simple service
     digest: cb8dc0f758c729a291ba46bf3fa3c35fd8057fe9cc875a74510a5299516aaf4b
     name: simple
@@ -155,7 +165,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-11T18:03:14.544668+01:00"
+    created: "2020-01-12T23:49:20.206653+01:00"
     description: Simple service
     digest: 5bfcfdd9575a7e4ae6a698c76c5e25ee2a94e9ade195ba89b0140e7f2e817963
     name: simple
@@ -163,4 +173,4 @@ entries:
     urls:
     - https://jamhed.github.io/charts/simple-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-11T18:03:14.534747+01:00"
+generated: "2020-01-12T23:49:20.191448+01:00"
