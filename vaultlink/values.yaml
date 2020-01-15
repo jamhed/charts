@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: jamhed/vaultlink
+
+vaultlink:
+  verbose: debug
+
+serviceAccount:
+  create: true
+
+resources:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
