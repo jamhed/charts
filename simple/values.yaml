@@ -4,4 +4,6 @@ privateVolumeSize: ~
 argovue:
   baseurl: ~
   labels: {}
+  owner: ~
+  ownerLabel: ~
   input: []

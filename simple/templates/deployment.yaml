@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "chart.fullname" . }}
+  annotations:
+    {{ .Values.argovue.ownerLabel }}: {{ .Values.argovue.owner }}
   labels:
     {{- toYaml .Values.argovue.labels | nindent 4 }}
     {{- include "chart.labels" . | nindent 4 }}
@@ -12,6 +14,8 @@ spec:
       {{- include "chart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      annotations:
+        {{ .Values.argovue.ownerLabel }}: {{ .Values.argovue.owner }}
       labels:
         {{- toYaml .Values.argovue.labels | nindent 8 }}
         {{- include "chart.selectorLabels" . | nindent 8 }}

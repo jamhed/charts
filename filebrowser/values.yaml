@@ -3,4 +3,6 @@ volumes:
   claim: ~
 argovue:
   baseurl: ~
+  owner: ~
+  ownerLabel: ~
   labels: {}
