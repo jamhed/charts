@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Release.Name }}-{{ include "chart.fullname" . }}-cluster-role
+rules:
+- apiGroups: [""]
+  resources: ["namespaces", "secrets"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+
