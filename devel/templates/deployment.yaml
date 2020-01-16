@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "chart.fullname" . }}
+  labels:
+    {{- include "chart.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "chart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "chart.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: {{ .Values.image }}
+        {{- if .Values.command }}
+        command:
+        {{- range $i, $cmd := .Values.command }}
+        - {{ $cmd }}
+        {{- end }}
+        {{- end }}
+        ports:
+        - name: http
+          containerPort: {{ .Values.port }}
+          protocol: TCP
+        volumeMounts:
+        {{- if .Values.privateVolumeSize }}
+        - mountPath: /mnt/private
+          name: private
+        {{- end }}
+      volumes:
+      {{- if .Values.privateVolumeSize }}
+      - name: private
+        persistentVolumeClaim:
+          claimName: {{ template "chart.fullname" . }}
+      {{- end }}
