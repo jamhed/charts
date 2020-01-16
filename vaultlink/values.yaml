@@ -5,11 +5,25 @@ image:
 
 vaultlink:
   verbose: debug
+  clusterName: ~
+  vaultAddr: ~
+  authPath: ~
+  kubeApiAddr: ~
 
 serviceAccount:
-  create: true
+  create: false
+
+volumes:
+- name: ca-certificates
+  configMap:
+    name: ca-certificates
+mounts:
+- name: ca-certificates
+  mountPath: /etc/ssl/certs
+  readOnly: true
 
 resources:
+  limits:
     cpu: 100m
     memory: 128Mi
   requests:

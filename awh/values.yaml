@@ -1,0 +1,34 @@
+replicaCount: 1
+
+image:
+  repository: jamhed/awh
+
+awh:
+  verbose: debug
+
+serviceAccount:
+  create: false
+
+service:
+  type: ClusterIP
+  port: 80
+
+certificate:
+  generate: true
+
+namespaceSelector:
+  matchExpressions:
+  - key: name
+    operator: NotIn
+    values:
+    - kube-system
+
+objectSelector: {}
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

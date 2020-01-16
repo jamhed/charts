@@ -22,22 +22,30 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
+      - name: serving-cert
+        secret:
+          defaultMode: 420
+          secretName: {{ template "chart.fullname" . }}
 {{- if .Values.volumes }}
 {{ toYaml .Values.volumes | indent 6 }}
 {{- end }}
       containers:
       - name: {{ .Chart.Name }}
         command: ["sh", "-c"]
-        {{- with .Values.vaultlink }}
-        args: ["/vaultlink -verbose={{ .verbose }} -authPath={{ .authPath }} -clusterName={{ .clusterName }} -vaultAddr={{ .vaultAddr }} -kubeApiAddr={{ .kubeApiAddr }}"]
+        {{- with .Values.awh }}
+        args: ["./awh -verbose={{ .verbose }} -certFile /var/serving-cert/tls.crt -keyFile /var/serving-cert/tls.key"]
         {{- end }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
         image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 8443
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
+        - mountPath: /var/serving-cert
+          name: serving-cert
 {{- if .Values.mounts }}
 {{ toYaml .Values.mounts | indent 8 }}
 {{- end }}

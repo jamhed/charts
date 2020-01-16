@@ -10,7 +10,7 @@ rules:
   resources: ["pods", "pods/log", "services", "persistentvolumeclaims"]
   verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
 - apiGroups: ["argovue.io"]
-  resources: ["services", "appconfigs"]
+  resources: ["services", "appconfigs", "tokens"]
   verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
 - apiGroups: ["argoproj.io"]
   resources: ["workflows"]

@@ -4,7 +4,13 @@ metadata:
   name: {{ .Release.Name }}-{{ include "chart.fullname" . }}-cluster-role
 rules:
 - apiGroups: [""]
-  resources: ["namespaces", "secrets"]
+  resources: ["namespaces", "secrets", "serviceaccounts"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+- apiGroups: ["authentication.k8s.io"]
+  resources: ["tokenreviews"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+- apiGroups: ["authorization.k8s.io"]
+  resources: ["subjectaccessreviews"]
   verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["clusterrolebindings"]
