@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Chart.name }}-{{ .Release.Name }}
+spec:
+  containers:
+  - name: {{ .Release.Name }}-{{ .Chart.Name }}
+    image: {{ .Values.image }}
+    {{- if .Values.command }}
+    command:
+    {{- range $i, $cmd := .Values.command }}
+    - {{ $cmd }}
+    {{- end }}
+    {{- end }}
+    volumeMounts:
+    {{- if .Values.privateVolumeSize }}
+    - mountPath: /mnt/private
+      name: private
+    {{- end }}
+  volumes:
+  {{- if .Values.privateVolumeSize }}
+  - name: private
+    persistentVolumeClaim:
+      claimName: {{ template "chart.fullname" . }}
+  {{- end }}
