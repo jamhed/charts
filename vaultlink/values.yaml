@@ -2,6 +2,7 @@ replicaCount: 1
 
 image:
   repository: jamhed/vaultlink
+  pullPolicy: IfNotPresent
 
 vaultlink:
   verbose: debug
@@ -12,6 +13,8 @@ vaultlink:
 
 serviceAccount:
   create: false
+
+podSecurityContext: {}
 
 volumes:
 - name: ca-certificates
