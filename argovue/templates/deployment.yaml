@@ -54,8 +54,12 @@ spec:
               value: {{ .Release.Namespace }}
             - name: K8S_RELEASE_NAME
               value: {{ include "argovue.fullname" . }}
+            - name: K8S_SERVICE_NAME
+              value: {{ include "argovue.fullname" . }}-dex
             - name: DEX_SERVICE_NAME
               value: {{ include "argovue.fullname" . }}-dex
+            - name: BASE_DOMAIN
+              value: {{ .Values.argovue.baseDomain }}
           ports:
             - name: http
               containerPort: 8080

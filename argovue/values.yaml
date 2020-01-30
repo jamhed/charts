@@ -26,6 +26,7 @@ argovue:
   oidcRedirectUrl: ~
   oidcScope: groups
   uiRootUrl: ~
+  baseDomain: ~
   groups:
   - oidc: authors
     kubernetes: authors
