@@ -55,7 +55,7 @@ spec:
             - name: K8S_RELEASE_NAME
               value: {{ include "argovue.fullname" . }}
             - name: K8S_SERVICE_NAME
-              value: {{ include "argovue.fullname" . }}-dex
+              value: {{ include "argovue.fullname" . }}
             - name: DEX_SERVICE_NAME
               value: {{ include "argovue.fullname" . }}-dex
             - name: BASE_DOMAIN
