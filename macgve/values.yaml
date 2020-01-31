@@ -1,0 +1,40 @@
+replicaCount: 1
+
+image:
+  repository: jamhed/macgve
+  pullPolicy: IfNotPresent
+
+macgve:
+  verbose: debug
+  image: jamhed/govaultenv:1.0.4
+  vaultAddr: https://vault.com
+
+serviceAccount:
+  create: false
+
+service:
+  type: ClusterIP
+  port: 80
+
+certificate:
+  generate: true
+
+podsFailurePolicy: Ignore
+podSecurityContext: {}
+
+namespaceSelector:
+  matchExpressions:
+  - key: name
+    operator: NotIn
+    values:
+    - kube-system
+
+objectSelector: {}
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
