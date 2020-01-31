@@ -32,8 +32,8 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         command: ["sh", "-c"]
-        {{- with .Values.awh }}
-        args: ["./awh -verbose={{ .verbose }} -certFile /var/serving-cert/tls.crt -keyFile /var/serving-cert/tls.key"]
+        {{- with .Values.macawh }}
+        args: ["./macawh -verbose={{ .verbose }} -certFile /var/serving-cert/tls.crt -keyFile /var/serving-cert/tls.key"]
         {{- end }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}

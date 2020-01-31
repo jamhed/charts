@@ -1,6 +1,6 @@
 apiVersion: v1
-name: awh
+name: macawh
 description: Nvidia helper
 type: application
 version: 0.1.5
-appVersion: 0.1.8
+appVersion: 0.1.9

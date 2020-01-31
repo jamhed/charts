@@ -1,10 +1,10 @@
 replicaCount: 1
 
 image:
-  repository: jamhed/awh
+  repository: jamhed/macawh
   pullPolicy: IfNotPresent
 
-awh:
+macawh:
   verbose: debug
 
 serviceAccount:
