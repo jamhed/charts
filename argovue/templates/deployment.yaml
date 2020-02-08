@@ -61,7 +61,7 @@ spec:
             - name: BASE_DOMAIN
               value: {{ .Values.argovue.baseDomain }}
             - name: REDIS_ADDR
-              value: {{ .Values.argovue.redisAddr | default "redis-master:6379" }}
+              value: {{ .Values.argovue.redisAddr | default (printf "%s-redis-master:6379" (include "argovue.fullname" .)) }}
           ports:
             - name: http
               containerPort: 8080
