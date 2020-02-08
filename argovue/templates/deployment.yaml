@@ -60,6 +60,8 @@ spec:
               value: {{ include "argovue.fullname" . }}-dex
             - name: BASE_DOMAIN
               value: {{ .Values.argovue.baseDomain }}
+            - name: REDIS_ADDR
+              value: {{ .Values.argovue.redisAddr | default "redis-master:6379" }}
           ports:
             - name: http
               containerPort: 8080

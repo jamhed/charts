@@ -1,0 +1,25 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: datasets.argovue.io
+spec:
+  group: argovue.io
+  versions:
+    - name: v1
+      served: true
+      storage: true
+  scope: Namespaced
+  names:
+    plural: datasets
+    singular: dataset
+    kind: Dataset
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          type: object
+          properties:
+            source:
+              type: string
+            location:
+              type: string

@@ -1,3 +1,7 @@
+redis:
+  cluster:
+    enabled: false
+
 replicaCount: 1
 
 image:
