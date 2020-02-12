@@ -13,6 +13,9 @@ metadata:
     {{- include "argovue.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:

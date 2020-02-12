@@ -3,7 +3,7 @@ redis:
   cluster:
     enabled: false
 
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: jamhed/argovue
