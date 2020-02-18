@@ -29,12 +29,18 @@ spec:
       - name: {{ .Chart.Name }}
         command: ["sh", "-c"]
         {{- with .Values.vaultlink }}
-        args: ["/vaultlink -verbose={{ .verbose }} -authPath={{ .authPath }} -clusterName={{ .clusterName }} -vaultAddr={{ .vaultAddr }} -kubeApiAddr={{ .kubeApiAddr }}"]
+        args: ["/vaultlink -port 8080 -verbose={{ .verbose }} -authPath={{ .authPath }} -clusterName={{ .clusterName }} -vaultAddr={{ .vaultAddr }} -kubeApiAddr={{ .kubeApiAddr }}"]
         {{- end }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
         image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 60
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
