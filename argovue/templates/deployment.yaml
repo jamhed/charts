@@ -2,10 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "argovue.fullname" . }}
-  {{- with .Values.argovue.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
   labels:
     {{- include "argovue.labels" . | nindent 4 }}
 spec:
@@ -17,6 +13,10 @@ spec:
     metadata:
       labels:
         {{- include "argovue.selectorLabels" . | nindent 8 }}
+      {{- with .Values.argovue.annotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
