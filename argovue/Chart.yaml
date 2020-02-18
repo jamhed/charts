@@ -2,5 +2,5 @@ apiVersion: v1
 name: argovue
 description: ArgoVue Helm Chart
 type: application
-version: 0.4.72
+version: 0.4.73
 appVersion: 0.4.54
