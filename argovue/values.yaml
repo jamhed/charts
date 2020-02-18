@@ -24,9 +24,14 @@ ingress:
   - ~
 
 argovue:
+  annotations:
+    govaultenv.io/authpath: default@k8s/ak8s-nv/argovue
+  env:
+  - name: OIDC_CLIENT_ID
+    value: client_id
+  - name: OIDC_CLIENT_SECRET
+    value: client_secret
   verbose: debug
-  oidcClientId: argovue
-  oidcClientSecret: ZXhhbXBsZS1hcHAtc2VjcmV0
   oidcProvider: ~
   oidcRedirectUrl: ~
   oidcScope: groups

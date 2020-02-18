@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "argovue.fullname" . }}
+  {{- with .Values.argovue.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   labels:
     {{- include "argovue.labels" . | nindent 4 }}
 spec:
@@ -29,6 +33,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["./argovue"]
           volumeMounts:
 {{- if .Values.mounts }}
 {{ toYaml .Values.mounts | indent 10 }}
@@ -38,10 +43,6 @@ spec:
               value: {{ .Values.argovue.verbose }}
             - name: SESSION_KEY
               value: {{ randAlphaNum 16 }}
-            - name: OIDC_CLIENT_ID
-              value: {{ .Values.argovue.oidcClientId }}
-            - name: OIDC_CLIENT_SECRET
-              value: {{ .Values.argovue.oidcClientSecret }}
             - name: OIDC_PROVIDER
               value: {{ .Values.argovue.oidcProvider }}
             - name: OIDC_REDIRECT_URL
@@ -62,6 +63,7 @@ spec:
               value: {{ .Values.argovue.baseDomain }}
             - name: REDIS_ADDR
               value: {{ .Values.argovue.redisAddr | default (printf "%s-redis-master:6379" (include "argovue.fullname" .)) }}
+            {{- toYaml .Values.argovue.env | nindent 12 }}
           ports:
             - name: http
               containerPort: 8080
