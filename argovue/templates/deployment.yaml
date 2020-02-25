@@ -41,8 +41,6 @@ spec:
           env:
             - name: VERBOSE
               value: {{ .Values.argovue.verbose }}
-            - name: SESSION_KEY
-              value: {{ randAlphaNum 16 }}
             - name: OIDC_PROVIDER
               value: {{ .Values.argovue.oidcProvider }}
             - name: OIDC_REDIRECT_URL
