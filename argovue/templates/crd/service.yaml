@@ -29,5 +29,7 @@ spec:
                     type: string
                   caption:
                     type: string
+                  default:
+                    type: string
             helmRelease:
               type: object
