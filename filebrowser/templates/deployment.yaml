@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: {{ include "chart.fullname" . }}
   annotations:
-    {{ .Values.argovue.ownerLabel }}: {{ .Values.argovue.owner }}
+    {{ .Values.dxp.ownerLabel }}: {{ .Values.dxp.owner }}
   labels:
-    {{- with .Values.argovue.labels }}
+    {{- with .Values.dxp.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
     {{- include "chart.labels" . | nindent 4 }}
@@ -17,9 +17,9 @@ spec:
   template:
     metadata:
       annotations:
-        {{ .Values.argovue.ownerLabel }}: {{ .Values.argovue.owner }}
+        {{ .Values.dxp.ownerLabel }}: {{ .Values.dxp.owner }}
       labels:
-        {{- with .Values.argovue.labels }}
+        {{- with .Values.dxp.labels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
         {{- include "chart.selectorLabels" . | nindent 8 }}
@@ -27,7 +27,7 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         image: filebrowser/filebrowser:{{ .Chart.AppVersion }}
-        args: ["--noauth", "--root", "/mnt", "--baseurl", "{{ .Values.argovue.baseurl }}"]
+        args: ["--noauth", "--root", "/mnt", "--baseurl", "{{ .Values.dxp.baseurl }}"]
         ports:
         - name: http
           containerPort: 80
