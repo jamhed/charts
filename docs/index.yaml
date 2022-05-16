@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  filebrowser:
+  - apiVersion: v1
+    appVersion: v2.21.1
+    created: "2022-05-16T23:26:08.002909+02:00"
+    description: Filebrowser helm chart
+    digest: 889bea0e6080c464ae0dfb74cc0ff9cba566f12dacf3eeee2ce52f92c2f7478b
+    name: filebrowser
+    type: application
+    urls:
+    - https://jamhed.github.io/charts/filebrowser-0.2.1.tgz
+    version: 0.2.1
+generated: "2022-05-16T23:26:08.002365+02:00"
