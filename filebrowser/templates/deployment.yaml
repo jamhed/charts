@@ -4,6 +4,8 @@ metadata:
   name: {{ include "chart.fullname" . }}
   annotations:
     {{- with .Values.dxp.annotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
   labels:
     {{- with .Values.dxp.labels }}
     {{- toYaml . | nindent 4 }}
@@ -17,7 +19,9 @@ spec:
   template:
     metadata:
       annotations:
-        {{ .Values.dxp.ownerLabel }}: {{ .Values.dxp.owner }}
+        {{- with .Values.dxp.annotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
       labels:
         {{- with .Values.dxp.labels }}
         {{- toYaml . | nindent 8 }}
