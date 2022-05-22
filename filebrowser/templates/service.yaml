@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "chart.fullname" . }}
   annotations:
-    {{ .Values.dxp.ownerLabel }}: {{ .Values.dxp.owner }}
+    {{- with .Values.dxp.annotations }}
   labels:
     {{- with .Values.dxp.labels }}
     {{- toYaml . | nindent 4 }}

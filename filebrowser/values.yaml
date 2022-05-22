@@ -3,6 +3,5 @@ volumes:
     claim: ~
 dxp:
   baseurl: ~
-  owner: ~
-  ownerLabel: ~
   labels: {}
+  annotations: {}
