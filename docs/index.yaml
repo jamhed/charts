@@ -3,7 +3,17 @@ entries:
   filebrowser:
   - apiVersion: v1
     appVersion: v2.22.4
-    created: "2022-09-12T12:39:41.037816+03:00"
+    created: "2022-09-12T13:54:50.820428+03:00"
+    description: Filebrowser helm chart
+    digest: 150f1373abadc1dabb7e5fb91fdf21641aabd9f721d0d04dd12ae00098b20fd2
+    name: filebrowser
+    type: application
+    urls:
+    - https://jamhed.github.io/charts/filebrowser-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v1
+    appVersion: v2.22.4
+    created: "2022-09-12T13:54:50.820127+03:00"
     description: Filebrowser helm chart
     digest: 1f6eb3e9431a57d2ede5a0f8e36b5f4075c6e97e9e5c91398ab19f69a27e079a
     name: filebrowser
@@ -13,7 +23,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: v2.21.1
-    created: "2022-09-12T12:39:41.037513+03:00"
+    created: "2022-09-12T13:54:50.8198+03:00"
     description: Filebrowser helm chart
     digest: 0af6aea8987968abdf4bea55ee3014571dc80d868b1f8a9d78ce9e465eccebc9
     name: filebrowser
@@ -23,7 +33,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: v2.21.1
-    created: "2022-09-12T12:39:41.037191+03:00"
+    created: "2022-09-12T13:54:50.819461+03:00"
     description: Filebrowser helm chart
     digest: 5db43732f8f6f0f5719c84248a112e9134b92e602250d8ac1b4e6f147c6895a3
     name: filebrowser
@@ -33,7 +43,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: v2.21.1
-    created: "2022-09-12T12:39:41.036843+03:00"
+    created: "2022-09-12T13:54:50.819138+03:00"
     description: Filebrowser helm chart
     digest: 889bea0e6080c464ae0dfb74cc0ff9cba566f12dacf3eeee2ce52f92c2f7478b
     name: filebrowser
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://jamhed.github.io/charts/filebrowser-0.2.1.tgz
     version: 0.2.1
-generated: "2022-09-12T12:39:41.036215+03:00"
+generated: "2022-09-12T13:54:50.818651+03:00"
